@@ -15,7 +15,7 @@ class DataRepository with ChangeNotifier{
 
   List<Movie> get popularMovieList => _popularMovieList;
 
-  Future getPopularMovies() async{
+  Future getPopularMovies() async {
     try {
       List<Movie> movies = await apiService.getPopularMovies(pageNumber: _popularMoviePageNumber);
       _popularMovieList.addAll(movies);
@@ -25,5 +25,9 @@ class DataRepository with ChangeNotifier{
       print("Error: ${response.statusCode}");
       rethrow;
     }
+  }
+
+  Future initData() async {
+    await getPopularMovies();
   }
 }

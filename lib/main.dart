@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:netflix/repository/data_repository.dart';
-import 'package:netflix/ui/screen/home_screen.dart';
+import 'package:netflix/ui/screen/loading_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomeScreen(),
+      home: const LoadingScreen(),
     );
   }
 }
