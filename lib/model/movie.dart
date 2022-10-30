@@ -43,7 +43,7 @@ class Movie {
   String posterUrl() {
     Api api = Api();
 
-    return api.baseUrl + posterPath!;
+    return api.baseImageUrl + posterPath!;
   }
 
 //</editor-fold>

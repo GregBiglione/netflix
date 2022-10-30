@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:netflix/service/api_service.dart';
 import 'package:netflix/utils/constant.dart';
+
+import '../../model/movie.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -10,6 +13,27 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  List<Movie>? movies;
+
+  @override
+  void initState() {
+    super.initState();
+    getMovies();
+  }
+
+  //****************************************************************************
+  // Get movies
+  //****************************************************************************
+
+  void getMovies(){
+    ApiService().getPopularMovies(pageNumber: 1)
+        .then((movieList){
+          setState(() {
+            movies = movieList;
+          });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,6 +49,12 @@ class _HomeScreenState extends State<HomeScreen> {
           Container(
             height: 500,
             color: Colors.red,
+            child: movies == null
+                ? const Center()
+                : Image.network(
+                    movies![0].posterUrl(),
+                    fit: BoxFit.cover,
+            ),
           ),
           const SizedBox(height: 15,),
           Text("Tendances actuelles",
@@ -45,9 +75,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   width: 110,
                   margin: const EdgeInsets.only(right: 8),
                   color: Colors.yellow,
-                  child: Center(
-                    child: Text(index.toString()),
-                  ),
+                  child: movies == null
+                      ? Center(
+                          child: Text(index.toString()),
+                        )
+                      : Image.network(
+                          movies![index + 1].posterUrl(),
+                          fit: BoxFit.cover,
+                        ),
                 );
               },
             ),
