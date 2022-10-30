@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:netflix/repository/data_repository.dart';
+import 'package:netflix/ui/widget/movie_card.dart';
 import 'package:netflix/utils/constant.dart';
 import 'package:provider/provider.dart';
 
@@ -37,10 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
             color: Colors.red,
             child: dataProvider.popularMovieList.isEmpty
                 ? const Center()
-                : Image.network(
-                    dataProvider.popularMovieList[0].posterUrl(),
-                    fit: BoxFit.cover,
-            ),
+                : MovieCard(movie: dataProvider.popularMovieList.first),
           ),
           const SizedBox(height: 15,),
           Text("Tendances actuelles",
@@ -65,10 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ? Center(
                           child: Text(index.toString()),
                         )
-                      : Image.network(
-                          dataProvider.popularMovieList[index].posterUrl(),
-                          fit: BoxFit.cover,
-                        ),
+                      : MovieCard(movie: dataProvider.popularMovieList[index]),
                 );
               },
             ),
