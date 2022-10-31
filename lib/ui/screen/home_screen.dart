@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:netflix/repository/data_repository.dart';
 import 'package:netflix/ui/widget/movie_card.dart';
+import 'package:netflix/ui/widget/movie_category.dart';
 import 'package:netflix/utils/constant.dart';
 import 'package:provider/provider.dart';
 
@@ -33,92 +33,27 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: ListView(
         children: [
-          Container(
+          SizedBox(
             height: 500,
-            color: Colors.red,
-            child: dataProvider.popularMovieList.isEmpty
-                ? const Center()
-                : MovieCard(movie: dataProvider.popularMovieList.first),
+            child: MovieCard(movie: dataProvider.popularMovieList.first),
           ),
-          const SizedBox(height: 15,),
-          Text("Tendances actuelles",
-            style: GoogleFonts.poppins(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.bold
-            ),
+          MovieCategory(
+              label: "Tendances actuelles",
+              movieList: dataProvider.popularMovieList,
+              imageWidth: 110,
+              imageHeight: 160,
           ),
-          const SizedBox(height: 5,),
-          SizedBox(
-            height: 160,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: dataProvider.popularMovieList.length,
-              itemBuilder: (context, index) {
-                return Container(
-                  width: 110,
-                  margin: const EdgeInsets.only(right: 8),
-                  color: Colors.yellow,
-                  child: dataProvider.popularMovieList.isEmpty
-                      ? Center(
-                          child: Text(index.toString()),
-                        )
-                      : MovieCard(movie: dataProvider.popularMovieList[index]),
-                );
-              },
-            ),
+          MovieCategory(
+            label: "Actuellement au cinéma",
+            movieList: dataProvider.popularMovieList,
+            imageWidth: 220,
+            imageHeight: 320,
           ),
-          const SizedBox(height: 15,),
-          Text("Actuellement au cinéma",
-            style: GoogleFonts.poppins(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.bold
-            ),
-          ),
-          const SizedBox(height: 5,),
-          SizedBox(
-            height: 320,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: 10,
-              itemBuilder: (context, index) {
-                return Container(
-                  width: 220,
-                  margin: const EdgeInsets.only(right: 8),
-                  color: Colors.blue,
-                  child: Center(
-                    child: Text(index.toString()),
-                  ),
-                );
-              },
-            ),
-          ),
-          const SizedBox(height: 15,),
-          Text("Bientôt disponible",
-            style: GoogleFonts.poppins(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.bold
-            ),
-          ),
-          const SizedBox(height: 5,),
-          SizedBox(
-            height: 160,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: 10,
-              itemBuilder: (context, index) {
-                return Container(
-                  width: 110,
-                  margin: const EdgeInsets.only(right: 8),
-                  color: Colors.green,
-                  child: Center(
-                    child: Text(index.toString()),
-                  ),
-                );
-              },
-            ),
+          MovieCategory(
+            label: "Bientôt disponible",
+            movieList: dataProvider.popularMovieList,
+            imageWidth: 110,
+            imageHeight: 160,
           ),
         ],
       ),
