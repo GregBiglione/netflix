@@ -54,4 +54,29 @@ class ApiService {
       throw response;
     }
   }
+
+  //****************************************************************************
+  // Get now playing
+  //****************************************************************************
+
+  Future getNowPlaying({required int pageNumber}) async{
+    Response response = await getData(
+        "/movie/now_playing",
+        params: {
+          "page": pageNumber,
+        }
+    );
+
+    if(response.statusCode == 200){
+      Map data = response.data;
+      List<Movie> movies = data["results"].map<Movie>((dynamic movieJson) {
+        return Movie.fromJson(movieJson);
+      }).toList();
+
+      return movies;
+    }
+    else{
+      throw response;
+    }
+  }
 }

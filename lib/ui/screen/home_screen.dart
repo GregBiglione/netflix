@@ -44,13 +44,14 @@ class _HomeScreenState extends State<HomeScreen> {
             imageHeight: 160,
             callback: dataProvider.getPopularMovies,
           ),
-          /*MovieCategory(
+          MovieCategory(
             label: "Actuellement au cinéma",
-            movieList: dataProvider.popularMovieList,
+            movieList: dataProvider.nowPlayingList,
             imageWidth: 220,
             imageHeight: 320,
+            callback: dataProvider.getNowPlaying,
           ),
-          MovieCategory(
+          /*MovieCategory(
             label: "Bientôt disponible",
             movieList: dataProvider.popularMovieList,
             imageWidth: 110,
