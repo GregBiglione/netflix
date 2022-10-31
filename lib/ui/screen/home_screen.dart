@@ -38,12 +38,13 @@ class _HomeScreenState extends State<HomeScreen> {
             child: MovieCard(movie: dataProvider.popularMovieList.first),
           ),
           MovieCategory(
-              label: "Tendances actuelles",
-              movieList: dataProvider.popularMovieList,
-              imageWidth: 110,
-              imageHeight: 160,
+            label: "Tendances actuelles",
+            movieList: dataProvider.popularMovieList,
+            imageWidth: 110,
+            imageHeight: 160,
+            callback: dataProvider.getPopularMovies,
           ),
-          MovieCategory(
+          /*MovieCategory(
             label: "Actuellement au cinéma",
             movieList: dataProvider.popularMovieList,
             imageWidth: 220,
@@ -54,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
             movieList: dataProvider.popularMovieList,
             imageWidth: 110,
             imageHeight: 160,
-          ),
+          ),*/
         ],
       ),
     );

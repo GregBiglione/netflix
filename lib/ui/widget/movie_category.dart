@@ -9,9 +9,11 @@ class MovieCategory extends StatelessWidget {
   final List<Movie> movieList;
   final double imageWidth;
   final double imageHeight;
+  final Function callback;
 
   const MovieCategory({Key? key, required this.label, required this.movieList,
-    required this.imageWidth, required this.imageHeight}) : super(key: key);
+    required this.imageWidth, required this.imageHeight,
+    required this.callback}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,20 +32,31 @@ class MovieCategory extends StatelessWidget {
         const SizedBox(height: 5,),
         SizedBox(
           height: imageHeight,
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: movieList.length,
-            itemBuilder: (context, index) {
-              return Container(
-                width: imageWidth,
-                margin: const EdgeInsets.only(right: 8),
-                child: movieList.isEmpty
-                    ? Center(
-                        child: Text(index.toString()),
-                      )
-                    : MovieCard(movie: movieList[index]),
-              );
+          child: NotificationListener<ScrollNotification>(
+            onNotification: (ScrollNotification scrollNotification) {
+              final currentPosition = scrollNotification.metrics.pixels;
+              final maxPosition = scrollNotification.metrics.maxScrollExtent;
+
+              if(currentPosition >= maxPosition / 2){
+                callback();
+              }
+              return true;
             },
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: movieList.length,
+              itemBuilder: (context, index) {
+                return Container(
+                  width: imageWidth,
+                  margin: const EdgeInsets.only(right: 8),
+                  child: movieList.isEmpty
+                      ? Center(
+                          child: Text(index.toString()),
+                        )
+                      : MovieCard(movie: movieList[index]),
+                );
+              },
+            ),
           ),
         ),
       ],
