@@ -12,6 +12,8 @@ class DataRepository with ChangeNotifier{
   int _nowPlayingPageNumber = 2;
   final List<Movie> _availableSoonList = [];
   int _availableSoonPageNumber = 2;
+  final List<Movie> _animationMovieList = [];
+  int _animationMoviesPageNumber = 1;
 
   //****************************************************************************
   // Getters
@@ -20,6 +22,7 @@ class DataRepository with ChangeNotifier{
   List<Movie> get popularMovieList => _popularMovieList;
   List<Movie> get nowPlayingList => _nowPlayingList;
   List<Movie> get availableSoonList => _availableSoonList;
+  List<Movie> get animationMovieList => _animationMovieList;
 
   //****************************************************************************
   // Get popular movies
@@ -69,9 +72,26 @@ class DataRepository with ChangeNotifier{
     }
   }
 
+  //****************************************************************************
+  // Get animation movies
+  //****************************************************************************
+
+  Future getAnimationMovies() async {
+    try {
+      List<Movie> movies = await apiService.getAnimationMovies(pageNumber: _animationMoviesPageNumber);
+      _animationMovieList.addAll(movies);
+      _animationMoviesPageNumber++;
+      notifyListeners();
+    } on Response catch (response) {
+      print("Error: ${response.statusCode}");
+      rethrow;
+    }
+  }
+
   Future initData() async {
     await getPopularMovies();
     await getNowPlaying();
     await getAvailableSoon();
+    await getAnimationMovies();
   }
 }

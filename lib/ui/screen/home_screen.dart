@@ -58,6 +58,13 @@ class _HomeScreenState extends State<HomeScreen> {
             imageHeight: 160,
             callback: dataProvider.getAvailableSoon,
           ),
+          MovieCategory(
+            label: "Animations",
+            movieList: dataProvider.animationMovieList,
+            imageWidth: 220,
+            imageHeight: 320,
+            callback: dataProvider.getAnimationMovies,
+          ),
         ],
       ),
     );
