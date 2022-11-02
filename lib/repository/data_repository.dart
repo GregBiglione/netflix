@@ -92,7 +92,7 @@ class DataRepository with ChangeNotifier{
   }
 
   //****************************************************************************
-  // Get animation movies
+  // Get adventure movies
   //****************************************************************************
 
   Future getAdventureMovies() async {
@@ -108,10 +108,14 @@ class DataRepository with ChangeNotifier{
   }
 
   Future initData() async {
-    await getPopularMovies();
-    await getNowPlaying();
-    await getAvailableSoon();
-    await getAnimationMovies();
-    await getAdventureMovies();
+    await Future.wait(
+      [
+        getPopularMovies(),
+        getNowPlaying(),
+        getAvailableSoon(),
+        getAnimationMovies(),
+        getAdventureMovies(),
+      ]
+    );
   }
 }
