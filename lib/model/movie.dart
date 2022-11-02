@@ -5,6 +5,9 @@ class Movie {
   final String name;
   final String description;
   final String? posterPath;
+  final List<String>? genres;
+  final String? releaseDate;
+  final double? vote;
 
 //<editor-fold desc="Data Methods">
 
@@ -13,6 +16,9 @@ class Movie {
     required this.name,
     required this.description,
     this.posterPath,
+    this.genres,
+    this.releaseDate,
+    this.vote,
   });
 
   Movie copyWith({
@@ -20,12 +26,18 @@ class Movie {
     String? name,
     String? description,
     String? posterPath,
+    List<String>? genres,
+    String? releaseDate,
+    double? vote,
   }) {
     return Movie(
       id: id ?? this.id,
       name: name ?? this.name,
       description: description ?? this.description,
       posterPath: posterPath ?? this.posterPath,
+      genres: genres ?? this.genres,
+      releaseDate: releaseDate ?? this.releaseDate,
+      vote: vote ?? this.vote,
     );
   }
 
@@ -44,6 +56,21 @@ class Movie {
     Api api = Api();
 
     return api.baseImageUrl + posterPath!;
+  }
+
+  // Reformat genres ***********************************************************
+
+  String reformatGenres() {
+    String categories = "";
+    for(int i = 0; i < categories.length; i++) {
+      if(i == genres!.length - 1) {
+        categories = categories + genres![i];
+      }
+      else {
+        categories = categories + "${genres![i]}, ";
+      }
+    }
+    return categories;
   }
 
 //</editor-fold>
