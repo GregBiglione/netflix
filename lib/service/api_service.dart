@@ -156,4 +156,33 @@ class ApiService {
       throw response;
     }
   }
+
+  //****************************************************************************
+  // Get movie details
+  //****************************************************************************
+
+  Future<Movie> getMovieDetails({required Movie movie}) async{
+    Response response = await getData(
+        "/movie/${movie.id}",
+    );
+
+    if(response.statusCode == 200){
+      Map<String, dynamic> _data = response.data;
+      var genres = _data["genres"] as List;
+      List<String> genreList = genres.map((genre){
+        return genre["name"] as String;
+      }).toList();
+
+      Movie detailedMovie = movie.copyWith(
+        genres: genreList,
+        releaseDate: _data["release_date"],
+        vote: _data["vote_average"],
+      );
+
+      return detailedMovie;
+    }
+    else{
+      throw response;
+    }
+  }
 }
