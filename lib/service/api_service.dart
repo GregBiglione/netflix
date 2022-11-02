@@ -130,4 +130,30 @@ class ApiService {
       throw response;
     }
   }
+
+  //****************************************************************************
+  // Get adventure movies
+  //****************************************************************************
+
+  Future getAdventureMovies({required int pageNumber}) async{
+    Response response = await getData(
+        "/discover/movie",
+        params: {
+          "page": pageNumber,
+          "with_genres": "12",
+        }
+    );
+
+    if(response.statusCode == 200){
+      Map data = response.data;
+      List<Movie> movies = data["results"].map<Movie>((dynamic movieJson) {
+        return Movie.fromJson(movieJson);
+      }).toList();
+
+      return movies;
+    }
+    else{
+      throw response;
+    }
+  }
 }
