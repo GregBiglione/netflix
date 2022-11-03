@@ -62,7 +62,7 @@ class Movie {
 
   String reformatGenres() {
     String categories = "";
-    for(int i = 0; i < categories.length; i++) {
+    for(int i = 0; i < genres!.length; i++) {
       if(i == genres!.length - 1) {
         categories = categories + genres![i];
       }
