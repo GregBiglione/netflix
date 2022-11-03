@@ -8,6 +8,7 @@ class Movie {
   final List<String>? genres;
   final String? releaseDate;
   final double? vote;
+  final List<String>? videos;
 
 //<editor-fold desc="Data Methods">
 
@@ -19,6 +20,7 @@ class Movie {
     this.genres,
     this.releaseDate,
     this.vote,
+    this.videos,
   });
 
   Movie copyWith({
@@ -29,6 +31,7 @@ class Movie {
     List<String>? genres,
     String? releaseDate,
     double? vote,
+    List<String>? videos,
   }) {
     return Movie(
       id: id ?? this.id,
@@ -38,6 +41,7 @@ class Movie {
       genres: genres ?? this.genres,
       releaseDate: releaseDate ?? this.releaseDate,
       vote: vote ?? this.vote,
+      videos: videos ?? this.videos,
     );
   }
 
