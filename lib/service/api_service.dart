@@ -197,8 +197,8 @@ class ApiService {
 
     if(response.statusCode == 200) {
       Map _data = response.data;
-      List<String> videoKeys = _data["results"].map((dynamic videoJson) {
-        return videoJson["key"];
+      List<String> videoKeys = _data["results"].map<String>((dynamic videoJson) {
+        return videoJson["key"] as String;
       }).toList();
 
       return movie.copyWith(videos: videoKeys);

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:netflix/model/movie.dart';
 import 'package:netflix/repository/data_repository.dart';
 import 'package:netflix/ui/widget/action_button.dart';
 import 'package:netflix/ui/widget/movie_info.dart';
 import 'package:netflix/utils/constant.dart';
 import 'package:provider/provider.dart';
+
+import '../widget/video_player.dart';
 
 class DetailScreen extends StatefulWidget {
   final Movie movie;
@@ -59,22 +62,35 @@ class _DetailScreenState extends State<DetailScreen> {
                   Container(
                     height: 220,
                     width: MediaQuery.of(context).size.width,
-                    color: Colors.red,
+                    child: movie!.videos!.isEmpty
+                        ? Center(
+                            child: Text(
+                              "Vidéo indisponible",
+                              style: GoogleFonts.poppins(
+                                color: Colors.white,
+                              ),
+                            ),
+                          )
+                        : VideoPlayer(movieId: movie!.videos!.first),
                   ),
                   MovieInfo(movie: movie!),
-                  const SizedBox(height: 10,),
-                  ActionButton(
-                      label: "Lecture",
-                      icon: Icons.play_arrow,
-                      bgColor: Colors.white,
-                      color: kBackgroundColor,
+                  const SizedBox(
+                    height: 10,
                   ),
-                  const SizedBox(height: 10,),
                   ActionButton(
-                      label: "Télécharger la vidéo",
-                      icon: Icons.download,
-                      bgColor: Colors.grey.withOpacity(0.3),
-                      color: Colors.white,
+                    label: "Lecture",
+                    icon: Icons.play_arrow,
+                    bgColor: Colors.white,
+                    color: kBackgroundColor,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  ActionButton(
+                    label: "Télécharger la vidéo",
+                    icon: Icons.download,
+                    bgColor: Colors.grey.withOpacity(0.3),
+                    color: Colors.white,
                   ),
                 ],
               ),
