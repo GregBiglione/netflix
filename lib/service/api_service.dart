@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:netflix/model/actor.dart';
 import 'package:netflix/model/movie.dart';
 import 'package:netflix/service/api.dart';
 
@@ -202,6 +203,28 @@ class ApiService {
       }).toList();
 
       return movie.copyWith(videos: videoKeys);
+    }
+    else {
+      throw response;
+    }
+  }
+
+  //****************************************************************************
+  // Get movie casting
+  //****************************************************************************
+
+  Future<Movie> getMovieCasting({required Movie movie}) async {
+    Response response = await getData(
+        "/movie/${movie.id}/credits"
+    );
+
+    if(response.statusCode == 200) {
+      Map _data = response.data;
+      List<Actor> _casting = _data["cast"].map<Actor>((dynamic actorJson) {
+        return Actor.fromJson(actorJson);
+      }).toList();
+
+      return movie.copyWith(casting: _casting);
     }
     else {
       throw response;

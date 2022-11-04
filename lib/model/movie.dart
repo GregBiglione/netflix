@@ -1,3 +1,4 @@
+import 'package:netflix/model/actor.dart';
 import 'package:netflix/service/api.dart';
 
 class Movie {
@@ -9,6 +10,7 @@ class Movie {
   final String? releaseDate;
   final double? vote;
   final List<String>? videos;
+  final List<Actor>? casting;
 
 //<editor-fold desc="Data Methods">
 
@@ -21,6 +23,7 @@ class Movie {
     this.releaseDate,
     this.vote,
     this.videos,
+    this.casting,
   });
 
   Movie copyWith({
@@ -32,6 +35,7 @@ class Movie {
     String? releaseDate,
     double? vote,
     List<String>? videos,
+    List<Actor>? casting,
   }) {
     return Movie(
       id: id ?? this.id,
@@ -42,6 +46,7 @@ class Movie {
       releaseDate: releaseDate ?? this.releaseDate,
       vote: vote ?? this.vote,
       videos: videos ?? this.videos,
+      casting: casting ?? this.casting,
     );
   }
 
