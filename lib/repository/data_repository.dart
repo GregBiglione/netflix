@@ -119,6 +119,8 @@ class DataRepository with ChangeNotifier{
       detailedMovie = await apiService.getMovieVideos(movie: detailedMovie);
       // Get casting ***********************************************************
       detailedMovie = await apiService.getMovieCasting(movie: detailedMovie);
+      // Get gallery ***********************************************************
+      detailedMovie = await apiService.getMovieImages(movie: detailedMovie);
       return detailedMovie;
     } on Response catch (response) {
       print("Error: ${response.statusCode}");

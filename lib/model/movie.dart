@@ -11,6 +11,7 @@ class Movie {
   final double? vote;
   final List<String>? videos;
   final List<Actor>? casting;
+  final List<String>? images;
 
 //<editor-fold desc="Data Methods">
 
@@ -24,6 +25,7 @@ class Movie {
     this.vote,
     this.videos,
     this.casting,
+    this.images,
   });
 
   Movie copyWith({
@@ -36,6 +38,7 @@ class Movie {
     double? vote,
     List<String>? videos,
     List<Actor>? casting,
+    List<String>? images,
   }) {
     return Movie(
       id: id ?? this.id,
@@ -47,6 +50,7 @@ class Movie {
       vote: vote ?? this.vote,
       videos: videos ?? this.videos,
       casting: casting ?? this.casting,
+      images: images ?? this.images,
     );
   }
 
