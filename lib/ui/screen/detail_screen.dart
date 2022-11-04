@@ -9,6 +9,7 @@ import 'package:netflix/utils/constant.dart';
 import 'package:provider/provider.dart';
 
 import '../widget/casting_card.dart';
+import '../widget/gallery_card.dart';
 import '../widget/video_player.dart';
 
 class DetailScreen extends StatefulWidget {
@@ -128,11 +129,35 @@ class _DetailScreenState extends State<DetailScreen> {
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: movie!.casting!.length,
-                        itemBuilder: (context, int index) {
+                      itemBuilder: (context, int index) {
                         return movie!.casting![index].imageUrl == null
                             ? const Center()
                             : CastingCard(actor: movie!.casting![index]);
-                        },
+                      },
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    "Galerie",
+                    style: GoogleFonts.poppins(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  SizedBox(
+                    height: 200,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: movie!.images!.length,
+                      itemBuilder: (context, int index) {
+                        return GalleryCard(posterPath: movie!.images![index]);
+                      },
                     ),
                   ),
                 ],
