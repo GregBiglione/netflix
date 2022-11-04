@@ -8,6 +8,7 @@ import 'package:netflix/ui/widget/movie_info.dart';
 import 'package:netflix/utils/constant.dart';
 import 'package:provider/provider.dart';
 
+import '../widget/casting_card.dart';
 import '../widget/video_player.dart';
 
 class DetailScreen extends StatefulWidget {
@@ -91,6 +92,48 @@ class _DetailScreenState extends State<DetailScreen> {
                     icon: Icons.download,
                     bgColor: Colors.grey.withOpacity(0.3),
                     color: Colors.white,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  movie!.description.isEmpty
+                      ? Center(
+                          child: Text(
+                            "Synopsis indisponible",
+                            style: GoogleFonts.poppins(
+                              color: Colors.white,
+                            ),
+                          ),
+                        )
+                      : Text(
+                          movie!.description,
+                          style: GoogleFonts.poppins(
+                            color: Colors.white,
+                            fontSize: 15,
+                          ),
+                        ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    "Casting",
+                    style: GoogleFonts.poppins(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 350,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: movie!.casting!.length,
+                        itemBuilder: (context, int index) {
+                        return movie!.casting![index].imageUrl == null
+                            ? const Center()
+                            : CastingCard(actor: movie!.casting![index]);
+                        },
+                    ),
                   ),
                 ],
               ),

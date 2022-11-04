@@ -25,9 +25,9 @@ class Actor {
 
   factory Actor.fromJson(Map<String, dynamic> map) {
     return Actor(
-      imageUrl: map['profile_path'] as String,
-      name: map['name'] as String,
-      characterName: map['character'] as String,
+      imageUrl: map['profile_path'],
+      name: map['name'],
+      characterName: map['character'],
     );
   }
 
