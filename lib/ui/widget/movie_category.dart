@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:netflix/utils/constant.dart';
 
 import '../../model/movie.dart';
 import 'movie_card.dart';
@@ -24,7 +25,7 @@ class MovieCategory extends StatelessWidget {
         Text(
           label,
           style: GoogleFonts.poppins(
-              color: Colors.white,
+              color: kWhite,
               fontSize: 18,
               fontWeight: FontWeight.bold
           ),

@@ -53,7 +53,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset("assets/images/netflix_logo_1.png"),
+          Image.asset(kLogo1),
           SpinKitFadingCircle(
             color: kPrimaryColor,
             size: 20,

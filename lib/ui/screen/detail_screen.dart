@@ -7,7 +7,7 @@ import 'package:netflix/ui/widget/action_button.dart';
 import 'package:netflix/ui/widget/movie_info.dart';
 import 'package:netflix/utils/constant.dart';
 import 'package:provider/provider.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../widget/casting_card.dart';
 import '../widget/gallery_card.dart';
 import '../widget/video_player.dart';
@@ -67,9 +67,9 @@ class _DetailScreenState extends State<DetailScreen> {
                     child: movie!.videos!.isEmpty
                         ? Center(
                             child: Text(
-                              "Vidéo indisponible",
+                              AppLocalizations.of(context)!.videoNotAvailable,
                               style: GoogleFonts.poppins(
-                                color: Colors.white,
+                                color: kWhite,
                               ),
                             ),
                           )
@@ -80,19 +80,19 @@ class _DetailScreenState extends State<DetailScreen> {
                     height: 10,
                   ),
                   ActionButton(
-                    label: "Lecture",
+                    label: AppLocalizations.of(context)!.play,
                     icon: Icons.play_arrow,
-                    bgColor: Colors.white,
+                    bgColor: kWhite,
                     color: kBackgroundColor,
                   ),
                   const SizedBox(
                     height: 10,
                   ),
                   ActionButton(
-                    label: "Télécharger la vidéo",
+                    label: AppLocalizations.of(context)!.downloadVideo,
                     icon: Icons.download,
                     bgColor: Colors.grey.withOpacity(0.3),
-                    color: Colors.white,
+                    color: kWhite,
                   ),
                   const SizedBox(
                     height: 20,
@@ -100,16 +100,16 @@ class _DetailScreenState extends State<DetailScreen> {
                   movie!.description.isEmpty
                       ? Center(
                           child: Text(
-                            "Synopsis indisponible",
+                            AppLocalizations.of(context)!.synopsisNotAvailable,
                             style: GoogleFonts.poppins(
-                              color: Colors.white,
+                              color: kWhite,
                             ),
                           ),
                         )
                       : Text(
                           movie!.description,
                           style: GoogleFonts.poppins(
-                            color: Colors.white,
+                            color: kWhite,
                             fontSize: 15,
                           ),
                         ),
@@ -117,9 +117,9 @@ class _DetailScreenState extends State<DetailScreen> {
                     height: 20,
                   ),
                   Text(
-                    "Casting",
+                    AppLocalizations.of(context)!.casting,
                     style: GoogleFonts.poppins(
-                      color: Colors.white,
+                      color: kWhite,
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
@@ -140,9 +140,9 @@ class _DetailScreenState extends State<DetailScreen> {
                     height: 20,
                   ),
                   Text(
-                    "Galerie",
+                    AppLocalizations.of(context)!.gallery,
                     style: GoogleFonts.poppins(
-                      color: Colors.white,
+                      color: kWhite,
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),

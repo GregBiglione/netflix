@@ -1,17 +1,21 @@
+import 'dart:ui';
+
 import 'package:dio/dio.dart';
 import 'package:netflix/model/actor.dart';
 import 'package:netflix/model/movie.dart';
 import 'package:netflix/service/api.dart';
+import 'package:netflix/utils/utils.dart';
 
 class ApiService {
   final Api api = Api();
   final Dio dio = Dio();
-
+  Locale deviceLocale = window.locale;
+  
   Future<Response> getData(String path, {Map<String, dynamic>? params}) async {
     String url = api.baseUrl + path;
     Map<String, dynamic> query = {
       "api_key": api.apiKey,
-      "language": "fr-FR",
+      "language": Utils.convertLocale(deviceLocale),
     };
 
     if(params != null) {
