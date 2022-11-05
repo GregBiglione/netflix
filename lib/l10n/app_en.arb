@@ -1,0 +1,61 @@
+{
+    "language": "en-US",
+    "@language": {
+        "language": "English language"
+    },
+
+    "currentTrends": "Current trends",
+    "@currentTrends": {
+        "currentTrends": "Current trends title"
+    },
+
+    "currentlyAtTheCinema": "Currently at the cinema",
+     "@currentlyAtTheCinema": {
+        "currentlyAtTheCinema": "Currently at the cinema title"
+    },
+
+    "availableSoon": "Available soon",
+    "@availableSoon": {
+        "availableSoon": "Available soon title"
+    },
+
+    "animations": "Animations",
+    "@animations": {
+        "animations": "Animations title"
+    },
+
+    "adventure": "Adventure",
+    "@adventure": {
+        "adventure": "Adventure title"
+    },
+
+    "videoNotAvailable": "Video not available",
+    "@videoNotAvailable": {
+        "videoNotAvailable": "Video not available error message"
+    },
+
+    "play": "Play",
+    "@play": {
+        "play": "Play message"
+    },
+
+    "downloadVideo": "Download video",
+    "@downloadVideo": {
+        "downloadVideo": "Download video message"
+    },
+
+    "synopsisNotAvailable": "Synopsis not available",
+    "@synopsisNotAvailable": {
+        "synopsisNotAvailable": "Synopsis not available error message"
+    },
+
+    "casting": "Casting",
+    "@casting": {
+        "casting": "Casting title"
+    },
+
+    "gallery": "Gallery",
+    "@gallery": {
+        "gallery": "Gallery title"
+    }
+}
