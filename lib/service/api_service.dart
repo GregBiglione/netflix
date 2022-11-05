@@ -159,97 +159,49 @@ class ApiService {
   }
 
   //****************************************************************************
-  // Get movie details
+  // Get movie details, videos, casting, gallery with a single call
   //****************************************************************************
 
-  Future<Movie> getMovieDetails({required Movie movie}) async{
+  Future<Movie> getMovie({required Movie movie}) async {
     Response response = await getData(
-        "/movie/${movie.id}",
-    );
-
-    if(response.statusCode == 200){
-      Map<String, dynamic> _data = response.data;
-      var genres = _data["genres"] as List;
-      List<String> genreList = genres.map((genre){
-        return genre["name"] as String;
-      }).toList();
-
-      Movie detailedMovie = movie.copyWith(
-        genres: genreList,
-        releaseDate: _data["release_date"],
-        vote: _data["vote_average"],
-      );
-
-      return detailedMovie;
-    }
-    else{
-      throw response;
-    }
-  }
-
-  //****************************************************************************
-  // Get movie video
-  //****************************************************************************
-
-  Future<Movie> getMovieVideos({required Movie movie}) async {
-    Response response = await getData(
-      "/movie/${movie.id}/videos"
-    );
-
-    if(response.statusCode == 200) {
-      Map _data = response.data;
-      List<String> videoKeys = _data["results"].map<String>((dynamic videoJson) {
-        return videoJson["key"] as String;
-      }).toList();
-
-      return movie.copyWith(videos: videoKeys);
-    }
-    else {
-      throw response;
-    }
-  }
-
-  //****************************************************************************
-  // Get movie casting
-  //****************************************************************************
-
-  Future<Movie> getMovieCasting({required Movie movie}) async {
-    Response response = await getData(
-        "/movie/${movie.id}/credits"
-    );
-
-    if(response.statusCode == 200) {
-      Map _data = response.data;
-      List<Actor> _casting = _data["cast"].map<Actor>((dynamic actorJson) {
-        return Actor.fromJson(actorJson);
-      }).toList();
-
-      return movie.copyWith(casting: _casting);
-    }
-    else {
-      throw response;
-    }
-  }
-
-  //****************************************************************************
-  // Get movie gallery
-  //****************************************************************************
-
-  Future<Movie> getMovieImages({required Movie movie}) async {
-    Response response = await getData(
-        "/movie/${movie.id}/images",
+      "/movie/${movie.id}",
       params: {
-          "include_image_language": "null"
+        "include_image_language": "null",
+        "append_to_response": "videos,images,credits",
       },
     );
 
     if(response.statusCode == 200) {
       Map _data = response.data;
-      List<String> imagePath = _data["backdrops"].map<String>((dynamic imageJson) {
+
+      // Get genres ************************************************************
+      List<String> genres = _data["genres"].map<String>((dynamic genreJson){
+        return genreJson["name"] as String;
+      }).toList();
+
+      // Get videos ************************************************************
+      List<String> videoKeys = _data["videos"]["results"].map<String>((dynamic videoJson) {
+        return videoJson["key"] as String;
+      }).toList();
+
+      // Get casting ***********************************************************
+      List<Actor> _casting = _data["credits"]["cast"].map<Actor>((dynamic actorJson) {
+        return Actor.fromJson(actorJson);
+      }).toList();
+
+      // Get gallery ***********************************************************
+      List<String> imagePath = _data["images"]["backdrops"].map<String>((dynamic imageJson) {
         return imageJson["file_path"] as String;
       }).toList();
 
-      return movie.copyWith(images: imagePath);
+      return movie.copyWith(
+        genres: genres,
+        releaseDate: _data["release_date"],
+        vote: _data["vote_average"],
+        videos: videoKeys,
+        casting: _casting,
+        images: imagePath,
+      );
     }
     else {
       throw response;
