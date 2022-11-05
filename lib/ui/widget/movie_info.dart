@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:netflix/model/movie.dart';
 import 'package:netflix/utils/constant.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MovieInfo extends StatelessWidget {
   final Movie movie;
@@ -28,7 +29,8 @@ class MovieInfo extends StatelessWidget {
           height: 5,
         ),
         Text(
-          "Genres: ${movie.reformatGenres()}",
+          //"Genres: ${movie.reformatGenres()}",
+          "${AppLocalizations.of(context)!.types} ${movie.reformatGenres()}",
           style: GoogleFonts.poppins(
             color: Colors.grey,
             fontSize: 14,
@@ -60,7 +62,8 @@ class MovieInfo extends StatelessWidget {
               width: 5,
             ),
             Text(
-              "Recommandé à ${(movie.vote! * 10).toInt()}%",
+              //"Recommandé à ${(movie.vote! * 10).toInt()}%",
+              "${AppLocalizations.of(context)!.recommendedTo} ${(movie.vote! * 10).toInt()}%",
               style: GoogleFonts.poppins(
                 color: Colors.green,
                 fontSize: 14,

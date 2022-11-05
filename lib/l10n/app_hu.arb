@@ -6,9 +6,11 @@
     "animations": "Animációk",
     "adventure": "Kaland",
     "videoNotAvailable": "Videó nem elérhető",
+    "types": "Műfajok:",
+    "recommendedTo": "Ajánlott a",
     "play": "Olvasás",
     "downloadVideo": "A videó letöltése",
     "synopsisNotAvailable": "Szinopszis nem elérhető",
-    "casting": "Casting",
+    "casting": "Színészek",
     "gallery": "Galéria"
 }

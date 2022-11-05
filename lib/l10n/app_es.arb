@@ -6,9 +6,11 @@
     "animations": "Animaciones",
     "adventure": "Aventura",
     "videoNotAvailable": "Vídeo no disponible",
+    "types": "Géneros:",
+    "recommendedTo": "Recomendado al",
     "play": "Lectura",
     "downloadVideo": "Descargar el vídeo",
     "synopsisNotAvailable": "Sinopsis no disponible",
-    "casting": "Casting",
+    "casting": "Actores",
     "gallery": "Galería"
 }

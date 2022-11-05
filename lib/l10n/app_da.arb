@@ -6,9 +6,11 @@
     "animations": "Animationer",
     "adventure": "Eventyr",
     "videoNotAvailable": "Video ikke tilgængelig",
+    "types": "Genrer:",
+    "recommendedTo": "Anbefalet på 10",
     "play": "Læsning",
     "downloadVideo": "Hent videoen",
     "synopsisNotAvailable": "Synopsis ikke tilgængelig",
-    "casting": "Casting",
+    "casting": "Skuespillere",
     "gallery": "Galleri"
 }

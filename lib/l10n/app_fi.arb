@@ -6,9 +6,11 @@
     "animations": "Animaatiot",
     "adventure": "Seikkailu",
     "videoNotAvailable": "Videota ei ole saatavilla",
+    "types": "Genres:",
+    "recommendedTo": "Suositellaan",
     "play": "Lukeminen",
     "downloadVideo": "Lataa video",
     "synopsisNotAvailable": "Synopsis ei saatavilla",
-    "casting": "Casting",
+    "casting": "Näyttelijät",
     "gallery": "Galleria"
 }

@@ -6,9 +6,11 @@
     "animations": "Κινουμένων σχεδίων",
     "adventure": "Περιπέτεια",
     "videoNotAvailable": "Βίντεο δεν είναι διαθέσιμο",
+    "types": "Κατηγορίες:",
+    "recommendedTo": "Συνιστάται σε",
     "play": "Ανάγνωση",
     "downloadVideo": "Κατεβάστε το βίντεο",
     "synopsisNotAvailable": "Σύνοψη μη διαθέσιμη",
-    "casting": "Casting",
+    "casting": "Ηθοποιοί",
     "gallery": "Γκαλερί"
 }

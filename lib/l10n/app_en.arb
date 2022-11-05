@@ -34,6 +34,21 @@
         "videoNotAvailable": "Video not available error message"
     },
 
+    "types": "types",
+    "@types": {
+        "types": "Types message"
+    },
+
+    "types": "Types",
+    "@types": {
+        "types": "Types message"
+    },
+
+    "recommendedTo": "Recommended to",
+    "@recommendedTo": {
+        "recommendedTo ": "Recommended to  message"
+    },
+
     "play": "Play",
     "@play": {
         "play": "Play message"
@@ -49,7 +64,7 @@
         "synopsisNotAvailable": "Synopsis not available error message"
     },
 
-    "casting": "Casting",
+    "casting": "Actors",
     "@casting": {
         "casting": "Casting title"
     },
