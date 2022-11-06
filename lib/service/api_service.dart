@@ -12,7 +12,6 @@ class ApiService {
   Locale deviceLocale = window.locale;
   
   Future<Response> getData(String path, {Map<String, dynamic>? params}) async {
-    print("!!!!!!!!!!!!!!! $deviceLocale" );
     String url = api.baseUrl + path;
     Map<String, dynamic> query = {
       "api_key": api.apiKey,
