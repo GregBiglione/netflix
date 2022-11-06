@@ -21,6 +21,7 @@ class L10n {
     const Locale("nl", "NL"),
     const Locale("pl", "PL"),
     const Locale("pt", "BR"),
+    const Locale("ro", "RO"),
     const Locale("ru", "RU"),
     const Locale("sk", "SK"),
     const Locale("sl", "SI"),
