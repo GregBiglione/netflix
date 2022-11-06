@@ -22,6 +22,7 @@ class L10n {
     const Locale("sk", "SK"),
     const Locale("sl", "SI"),
     const Locale("sv", "SE"),
+    const Locale("tr", "TR"),
     const Locale("uk", "UA"),
   ];
 }
