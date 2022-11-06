@@ -47,6 +47,15 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.10.0
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/netflix_logo_2.png"
+  background_color: "#020202"
+  adaptive_icon_foreground: "assets/images/netflix_app_launcher.png"
+  adaptive_icon_background: "#020202"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
