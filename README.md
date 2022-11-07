@@ -1,16 +1,15 @@
-# netflix
+<p align="center">
+  <img src="https://github.com/GregBiglione/netflix/blob/master/assets/images/netflix_logo_1.png?raw=true" alt="Netflix logo"/>
+</p>
 
-A new Flutter project.
+<b>Netflix</b> is a Flutter application to view your favorites movies & series wherevever you are</br>
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<h2>Application features</h2></br>
+<ul>
+  <li>Display differents movies categories</li>
+  <li>Watch the movie trailer</li>
+  <li>Display the movie title, released year and rating</li>
+  <li>Display the movie casting</li>
+  <li>Display the photo gallery from movie</li>
+  <li>Application availabe in 27 languages</li>
+</ul>
