@@ -75,7 +75,7 @@
  <li><img src ="https://github.com/GregBiglione/netflix/blob/master/assets/images/ro.png" title = "ro" alt = "ro" width="20" height="12"> Romanian</li> 
  <li><img src ="https://github.com/GregBiglione/netflix/blob/master/assets/images/ru.png" title = "ru" alt = "ru" width="20" height="12"> Russian</li>
  <li><img src ="https://github.com/GregBiglione/netflix/blob/master/assets/images/sk.png" title = "sk" alt = "sk" width="20" height="12"> Slovak</li> 
- <li><img src ="https://github.com/GregBiglione/netflix/blob/master/assets/images/sl.png" title = "si" alt = "sl" width="20" height="12"> Slovenian</li>
+ <li><img src ="https://github.com/GregBiglione/netflix/blob/master/assets/images/si.png" title = "si" alt = "sl" width="20" height="12"> Slovenian</li>
  <li><img src ="https://github.com/GregBiglione/netflix/blob/master/assets/images/se.png" title = "sv" alt = "sv" width="20" height="12"> Swedish</li>
  <li><img src ="https://github.com/GregBiglione/netflix/blob/master/assets/images/tr.png" title = "tr" alt = "tr" width="20" height="12"> Turkish</li>
  <li><img src ="https://github.com/GregBiglione/netflix/blob/master/assets/images/ua.png" title = "uk" alt = "uk" width="20" height="12"> Ukrainian</li>
