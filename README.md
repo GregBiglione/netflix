@@ -65,7 +65,7 @@
  <li><img src ="https://github.com/GregBiglione/netflix/blob/master/assets/images/fr.png" title = "fr" alt = "fr" width="20" height="12"> French</li>
  <li><img src ="https://github.com/GregBiglione/netflix/blob/master/assets/images/hu.png" title = "hu" alt = "hu" width="20" height="12"> Hungarian</li>
  <li><img src ="https://github.com/GregBiglione/netflix/blob/master/assets/images/id.png" title = "id" alt = "id" width="20" height="12"> Indonesian</li>
- <li><img src ="https://github.com/GregBiglione/netflix/blob/master/assets/images/jp.png" title = "ja" alt = "ja" width="20" height="12"> Japonese</li>
+ <li><img src ="https://github.com/GregBiglione/netflix/blob/master/assets/images/jp.png" title = "ja" alt = "ja" width="20" height="12"> Japanese</li>
  <li><img src ="https://github.com/GregBiglione/netflix/blob/master/assets/images/kr.png" title = "ko" alt = "ko" width="20" height="12"> Korean</li>
  <li><img src ="https://github.com/GregBiglione/netflix/blob/master/assets/images/lt.png" title = "lt" alt = "lt" width="20" height="12"> Lithuanian</li>
  <li><img src ="https://github.com/GregBiglione/netflix/blob/master/assets/images/lv.png" title = "lv" alt = "lv" width="20" height="12"> Latvian</li>
